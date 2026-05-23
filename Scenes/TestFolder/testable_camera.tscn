@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://t768x2vvm6mp"]
+
+[ext_resource type="Script" uid="uid://1ewjlkdjkxdk" path="res://Scripts/TestFolder/TestableCamera.cs" id="1_q6caq"]
+
+[node name="TestableCamera" type="Camera2D" unique_id=1371315199]
+script = ExtResource("1_q6caq")

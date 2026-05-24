@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bfmj5dmbyhed5"]
+
+[node name="Game" type="Node2D" unique_id=990839596]
+
+[node name="Pausable" type="Node2D" parent="." unique_id=990914961]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=60753710]
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1428899268]

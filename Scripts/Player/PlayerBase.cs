@@ -7,6 +7,7 @@ public partial class PlayerBase : CharacterBody2D, IDamagable, IUnitChangable
 {
 	[Export] public UnitResource BaseResource { get; set; }
 	[Export] public UnitResource UpgradeResource { get; set; }
+	[Export] public Sprite2D Texture;
 	public float Hp { get; set; }
 	[Export] private float Speed = 0;
 	[Export] public float Acceleration = 10f; 
@@ -16,18 +17,30 @@ public partial class PlayerBase : CharacterBody2D, IDamagable, IUnitChangable
 	{
 		var dt = (float)delta;
 
+		MoveScript(dt);
+		RotateTovard();
+	}
+
+	protected virtual void MoveScript(float dt)
+	{
 		var direction = Input.GetVector("a", "d", "w", "s");
-		Vector2 targetVelocity = direction * Speed;
-		float weight = direction.Length() > 0 ? Acceleration : Friction;
+        		Vector2 targetVelocity = direction * Speed;
+        		float weight = direction.Length() > 0 ? Acceleration : Friction;
+        
+        		Velocity = Velocity.Lerp(targetVelocity, weight * dt);
+        
+        		MoveAndSlide();
+	}
 
-		Velocity = Velocity.Lerp(targetVelocity, weight * dt);
-
-		MoveAndSlide();
+	protected virtual void RotateTovard()
+	{
+		var mp = GetGlobalMousePosition();
+		Texture.FlipH = (mp.X < GlobalPosition.X);
 	}
 
 	public void TakeDamage(float damage, Node Unit, DamageType damageType)
 	{
-		throw new NotImplementedException();
+		Hp -= damage;
 		if (Hp <= 0) OnDie();
 	}
 

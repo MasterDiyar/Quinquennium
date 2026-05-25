@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d0bqg4smkar2p"]
+
+[ext_resource type="Script" uid="uid://bspqg5rkpicdc" path="res://Scripts/UI/Menu.cs" id="1_bhona"]
+
+[node name="Menu" type="Control" unique_id=1305808159 node_paths=PackedStringArray("Play")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bhona")
+Play = NodePath("Button")
+
+[node name="Button" type="Button" parent="." unique_id=175816924]
+layout_mode = 0
+offset_left = 732.0
+offset_top = 397.0
+offset_right = 1273.0
+offset_bottom = 547.0
+theme_override_font_sizes/font_size = 96
+text = "Play"

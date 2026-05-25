@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Quinquennium"
+run/main_scene="uid://d0bqg4smkar2p"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://owhsw4jnpv5v"
 
 [display]
 

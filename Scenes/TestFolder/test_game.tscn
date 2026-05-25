@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ctkroaibb0tsq"]
+
+[ext_resource type="PackedScene" uid="uid://bfmj5dmbyhed5" path="res://Scenes/Generics/game.tscn" id="1_gu11v"]
+[ext_resource type="PackedScene" uid="uid://c28wtuxajg5j8" path="res://Scenes/TestFolder/earth.tscn" id="2_cn6l8"]
+[ext_resource type="PackedScene" uid="uid://cce6mv8m1fk4x" path="res://Scenes/Player/player.tscn" id="3_sopsw"]
+[ext_resource type="Script" uid="uid://dn5i7a6os6npo" path="res://Scripts/Resources/UnitResource.cs" id="4_sopsw"]
+
+[sub_resource type="Resource" id="Resource_tlqes"]
+script = ExtResource("4_sopsw")
+MaxSpeed = 100.0
+metadata/_custom_type_script = "uid://dn5i7a6os6npo"
+
+[sub_resource type="Resource" id="Resource_yp7no"]
+script = ExtResource("4_sopsw")
+metadata/_custom_type_script = "uid://dn5i7a6os6npo"
+
+[node name="Game" unique_id=990839596 instance=ExtResource("1_gu11v")]
+
+[node name="Earth" parent="Pausable" parent_id_path=PackedInt32Array(990914961) index="0" unique_id=1658053626 instance=ExtResource("2_cn6l8")]
+
+[node name="Player" parent="Pausable" parent_id_path=PackedInt32Array(990914961) index="1" unique_id=970444844 instance=ExtResource("3_sopsw")]
+position = Vector2(342, 301)
+BaseResource = SubResource("Resource_tlqes")
+UpgradeResource = SubResource("Resource_yp7no")
+Speed = 100.0

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cce6mv8m1fk4x"]
+
+[ext_resource type="Texture2D" uid="uid://dxes207fy1hme" path="res://Assets/Player/dust.png" id="1_a3d8c"]
+[ext_resource type="Script" uid="uid://rlju556vmcps" path="res://Scripts/Player/PlayerBase.cs" id="1_xpcdj"]
+[ext_resource type="Texture2D" uid="uid://6l6uk7a2c6u2" path="res://Assets/Player/Head.png" id="2_xpcdj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mtuoh"]
+radius = 20.0
+height = 58.0
+
+[sub_resource type="Curve" id="Curve_htcer"]
+_data = [Vector2(0, 0.6741574), 0.0, 0.0, 0, 0, Vector2(0.98936176, 0.97752815), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_dd0ac"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0.5058824)
+
+[node name="Player" type="CharacterBody2D" unique_id=970444844]
+texture_filter = 3
+script = ExtResource("1_xpcdj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1223419774]
+shape = SubResource("CapsuleShape2D_mtuoh")
+
+[node name="Dust" type="Sprite2D" parent="." unique_id=2087511753]
+position = Vector2(0, 5)
+scale = Vector2(1, 3.5625)
+texture = ExtResource("1_a3d8c")
+
+[node name="Head" type="Sprite2D" parent="." unique_id=535468542]
+position = Vector2(4, -2)
+texture = ExtResource("2_xpcdj")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=411101488]
+position = Vector2(0, 11)
+amount = 12
+texture = ExtResource("1_a3d8c")
+emission_shape = 1
+emission_sphere_radius = 17.47
+direction = Vector2(0, 1)
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+angular_velocity_min = 10.0
+angular_velocity_max = 30.0
+orbit_velocity_min = -0.1
+orbit_velocity_max = 0.1
+linear_accel_max = 5.0
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_htcer")
+color_ramp = SubResource("Gradient_dd0ac")

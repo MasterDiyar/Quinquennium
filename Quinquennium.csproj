@@ -6,6 +6,5 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Scripts\Bullet\" />
-    <Folder Include="Scripts\Weapon\" />
   </ItemGroup>
 </Project>

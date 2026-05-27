@@ -20,4 +20,10 @@ public partial class Weapon : Node2D
         WeaponRes = (WeaponResource)WeaponRes.Duplicate();
         WeaponRes.SetWeapon(this);
     }
+
+
+    public virtual void Execute()
+    {
+        
+    }
 }

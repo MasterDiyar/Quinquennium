@@ -8,7 +8,7 @@ public partial class WeaponResource : Resource
     [Export] public PackedScene OnFire;
     [Export] public float Damage, TimePerAttack, ExecuteTime;
     [Export] public int ExecuteCount;
-
+    [Export] public PackedScene WeaponInstanceScene;
     public void SetWeapon(Weapon weapon)
     {
         weapon.ExecuteSpeed = ExecuteTime;

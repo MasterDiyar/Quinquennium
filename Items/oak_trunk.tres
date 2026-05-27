@@ -1,9 +1,13 @@
 [gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://doufpn6oqqi2j"]
 
 [ext_resource type="Script" uid="uid://ddxrjiws02oxr" path="res://Scripts/Resources/ItemResource.cs" id="1_hl24p"]
+[ext_resource type="Texture2D" uid="uid://brsslltiw75dx" path="res://Assets/Items/oak_trunk.png" id="1_jjqyk"]
 
 [resource]
 script = ExtResource("1_hl24p")
 Id = "quin:oak_trunk"
 DisplayName = "oak trunk"
+Icon = ExtResource("1_jjqyk")
+Description = "default trunk"
+MaxCount = 1000
 metadata/_custom_type_script = "uid://ddxrjiws02oxr"

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bodc67ftc704i"]
+
+[node name="BaseWeapon" type="Node2D" unique_id=2004713355]
+
+[node name="Timer" type="Timer" parent="." unique_id=808228034]

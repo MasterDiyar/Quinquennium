@@ -7,4 +7,5 @@ public partial class UnitResource : Resource
     [Export] public float MaxHp;
     [Export] public float MaxSpeed;
     [Export] public float DamageAmplifier;
+    [Export] public Texture2D Icon;
 }

@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://bova1sdugsq13"]
 
+[ext_resource type="Script" uid="uid://dpyiljct75daj" path="res://Scripts/Items/ThrowedItem.cs" id="1_lebik"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jo0ln"]
 size = Vector2(32, 32)
 
 [node name="ThrowedItem" type="Area2D" unique_id=1877937842]
+script = ExtResource("1_lebik")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1624463091]
 shape = SubResource("RectangleShape2D_jo0ln")

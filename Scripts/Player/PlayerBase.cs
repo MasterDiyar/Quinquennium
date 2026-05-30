@@ -2,6 +2,7 @@ using Godot;
 using System;
 using Quinquennium.Scripts.Enums;
 using Quinquennium.Scripts.Interfaces;
+using Quinquennium.Scripts.Player.Inventory;
 
 public partial class PlayerBase : CharacterBody2D, IDamagable, IUnitChangable
 {
@@ -11,7 +12,9 @@ public partial class PlayerBase : CharacterBody2D, IDamagable, IUnitChangable
 	public float Hp { get; set; }
 	[Export] private float Speed = 0;
 	[Export] public float Acceleration = 10f; 
-	[Export] public float Friction = 15f;     
+	[Export] public float Friction = 15f;    
+	
+	[Export] public Inventory inventory;
 
 	public override void _PhysicsProcess(double delta)
 	{

@@ -17,6 +17,9 @@ public partial class ThrowedItem : Area2D
 
 	public void BodyEnter(Node2D body)
 	{
-		
+		if (body is PlayerBase pb)
+		{
+			pb.inventory.AddItem(ItemResource, LayedItem.Count);
+		}
 	}
 }

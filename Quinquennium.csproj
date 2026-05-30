@@ -8,4 +8,9 @@
     <Folder Include="Items\" />
     <Folder Include="Scripts\Bullet\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.md" />
+    <Content Include="Scripts\Items\ITEMS.md" />
+    <Content Include="Scripts\Player\Inventory\INVENTORY.md" />
+  </ItemGroup>
 </Project>

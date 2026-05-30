@@ -9,6 +9,7 @@ namespace Quinquennium.Scripts.Player.Inventory;
 public partial class Inventory : Node
 {
     private List<ItemInInventory> _items = [];
+    public List<ItemInInventory> GetItems() => _items;
 
     public void AddItem(ItemResource itemR, int count)
     {

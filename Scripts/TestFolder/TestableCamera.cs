@@ -4,6 +4,7 @@ using System;
 public partial class TestableCamera : Camera2D
 {
     [Export] public bool IsManualMove = true;
+    [Export] public bool IsLocked = false;
     [Export] public float Speed = 100f;
     [Export] public float Margin = 30f; 
     [Export] public float Acceleration = 3.0f; 
@@ -18,7 +19,7 @@ public partial class TestableCamera : Camera2D
                 targetZoom = Zoom.X + zoomDelta * zoomSpeed * dt;
           Zoom = new Vector2(Mathf.Clamp(targetZoom, 0.5f, 5.0f), Mathf.Clamp(targetZoom, 0.5f, 5.0f));
        }
-       
+       if (IsLocked) return;
        if (IsManualMove) ManualMove(dt);
        else CornerMove(dt);
     }

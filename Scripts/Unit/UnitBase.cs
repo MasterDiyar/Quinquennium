@@ -1,4 +1,5 @@
-﻿using Godot;
+﻿using System;
+using Godot;
 using Quinquennium.Scripts.Enums;
 using Quinquennium.Scripts.Interfaces;
 
@@ -9,11 +10,13 @@ public partial class UnitBase : CharacterBody2D, IDamagable, IUnitChangable
     [Export]public UnitResource BaseResource { get; set; }
      [Export]public UnitResource UpgradeResource { get; set; }
     public float Hp { get; set; }
+    public Action<float> OnTakeDamage;
     public void TakeDamage(float damage, Node Unit, DamageType damageType)
     {
         Hp -= damage;
         if (Hp <= 0)
             OnDie();
+        OnTakeDamage?.Invoke(damage);
     }
 
     public void OnDie()

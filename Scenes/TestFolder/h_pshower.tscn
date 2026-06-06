@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://t7lnvgb20u10"]
+
+[ext_resource type="Script" uid="uid://df466r6kld1" path="res://Scripts/Unit/HPshower.cs" id="1_lmksr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lmksr"]
+font_size = 24
+font_color = Color(1, 0.9666667, 0, 1)
+outline_size = 2
+outline_color = Color(1, 0.2166667, 0, 1)
+
+[node name="HPshower" type="Label" unique_id=1731537667]
+offset_left = -7.0
+offset_top = -17.0
+offset_right = 7.0
+offset_bottom = 17.0
+text = "0"
+label_settings = SubResource("LabelSettings_lmksr")
+script = ExtResource("1_lmksr")

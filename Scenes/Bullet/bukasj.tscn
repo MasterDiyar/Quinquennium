@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://5niyjg1qplg5"]
+
+[ext_resource type="Texture2D" uid="uid://dxes207fy1hme" path="res://Assets/Player/dust.png" id="1_7ft2d"]
+
+[node name="Bukasj" type="Sprite2D" unique_id=1823328759]
+texture = ExtResource("1_7ft2d")

@@ -45,6 +45,7 @@ public partial class PlayerBase : CharacterBody2D, IDamagable, IUnitChangable
 	{
 		Hp -= damage;
 		if (Hp <= 0) OnDie();
+		
 	}
 
 	public void OnDie()

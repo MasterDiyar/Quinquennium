@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://uo4643p7sp4s"]
+
+[ext_resource type="Script" uid="uid://um1ex3co0qid" path="res://Scripts/Weapon/Weapon.cs" id="1_b7aa2"]
+[ext_resource type="PackedScene" uid="uid://gh26oroyo528" path="res://Scenes/Bullet/bullet.tscn" id="2_kebmu"]
+[ext_resource type="Script" uid="uid://b77l18cw3hob3" path="res://Scripts/Resources/BulletResource.cs" id="2_lkqbr"]
+[ext_resource type="Script" uid="uid://dcdf5nadi3tkb" path="res://Scripts/Resources/WeaponResource.cs" id="3_kebmu"]
+[ext_resource type="PackedScene" uid="uid://5niyjg1qplg5" path="res://Scenes/Bullet/bukasj.tscn" id="3_msg1b"]
+
+[sub_resource type="Resource" id="Resource_msg1b"]
+script = ExtResource("2_lkqbr")
+TextureScene = ExtResource("3_msg1b")
+BulletScene = ExtResource("2_kebmu")
+Speed = 90.0
+LifeTime = 2.0
+metadata/_custom_type_script = "uid://b77l18cw3hob3"
+
+[sub_resource type="Resource" id="Resource_0guc6"]
+script = ExtResource("3_kebmu")
+bullet = SubResource("Resource_msg1b")
+Damage = 10.0
+TimePerAttack = 1.0
+ExecuteTime = 0.1
+ExecuteCount = 1
+metadata/_custom_type_script = "uid://dcdf5nadi3tkb"
+
+[node name="Shitomet" type="Node2D" unique_id=1521542146]
+script = ExtResource("1_b7aa2")
+WeaponRes = SubResource("Resource_0guc6")

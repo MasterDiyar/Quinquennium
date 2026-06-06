@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dg2yloh82y4qn"]
+
+[ext_resource type="Script" uid="uid://lkdvnv1n6g25" path="res://Scripts/Unit/UnitBase.cs" id="1_6dnk0"]
+[ext_resource type="Script" uid="uid://dn5i7a6os6npo" path="res://Scripts/Resources/UnitResource.cs" id="2_wjcr2"]
+[ext_resource type="Texture2D" uid="uid://co1gnhll5b1me" path="res://Assets/Units/Maugli.png" id="3_14b7b"]
+[ext_resource type="PackedScene" uid="uid://t7lnvgb20u10" path="res://Scenes/TestFolder/h_pshower.tscn" id="4_wjcr2"]
+
+[sub_resource type="Resource" id="Resource_w0tvh"]
+script = ExtResource("2_wjcr2")
+MaxHp = 200.0
+MaxSpeed = 10.0
+DamageAmplifier = 30.0
+metadata/_custom_type_script = "uid://dn5i7a6os6npo"
+
+[sub_resource type="Resource" id="Resource_y8uws"]
+script = ExtResource("2_wjcr2")
+MaxHp = 1.0
+MaxSpeed = 1.0
+DamageAmplifier = 1.0
+metadata/_custom_type_script = "uid://dn5i7a6os6npo"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d0e35"]
+radius = 6.0
+height = 50.0
+
+[node name="TestUnit" type="CharacterBody2D" unique_id=229780943]
+texture_filter = 3
+script = ExtResource("1_6dnk0")
+BaseResource = SubResource("Resource_w0tvh")
+UpgradeResource = SubResource("Resource_y8uws")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=361551016]
+shape = SubResource("CapsuleShape2D_d0e35")
+
+[node name="Maugli" type="Sprite2D" parent="." unique_id=2140866163]
+position = Vector2(-3, -4)
+texture = ExtResource("3_14b7b")
+
+[node name="HPshower" parent="." unique_id=1731537667 instance=ExtResource("4_wjcr2")]
+visible = false

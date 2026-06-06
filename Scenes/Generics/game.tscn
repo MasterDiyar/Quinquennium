@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bfmj5dmbyhed5"]
 
+[ext_resource type="Script" uid="uid://2ng8wjt3vjyi" path="res://Scripts/Singletons/Game.cs" id="1_i02or"]
+
 [node name="Game" type="Node2D" unique_id=990839596]
+script = ExtResource("1_i02or")
 
 [node name="Pausable" type="Node2D" parent="." unique_id=990914961]
 

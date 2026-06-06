@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://gh26oroyo528"]
+
+[ext_resource type="Script" uid="uid://c7m7kybmeqy4a" path="res://Scripts/Bullet/BulletBase.cs" id="1_k7rnr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lv0gj"]
+
+[node name="Bullet" type="Area2D" unique_id=674577736]
+texture_filter = 3
+script = ExtResource("1_k7rnr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1270373625]
+shape = SubResource("CircleShape2D_lv0gj")

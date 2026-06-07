@@ -15,6 +15,8 @@ public partial class Weapon : Node2D, IInteractable
                        Damage;
     public         int BulletCount;
 
+    private bool mayShoot = true;
+
     public override void _Ready()
     {
         
@@ -39,14 +41,26 @@ public partial class Weapon : Node2D, IInteractable
         }
     }
 
-    public void OnLeftClick(Vector2 mousePosition, Vector2 interactPosition)
+    public async void OnLeftClick(Vector2 mousePosition, Vector2 interactPosition)
     {
-        var angle = interactPosition - mousePosition;
-        Execute(WeaponRes.bullet, mousePosition, angle.Angle());
+        if (!mayShoot) return;
+        mayShoot = false;
+        aftershoot = WeaponRes.TimePerAttack;
+        if (WeaponRes.ExecuteTime > 0) await ToSignal(GetTree().CreateTimer(WeaponRes.ExecuteTime), "timeout");
+        if (!IsInstanceValid(this)) return;
+        var angle = - interactPosition + mousePosition;
+        Execute(WeaponRes.bullet, interactPosition, angle.Angle());
     }
 
     public void OnRightClick(Vector2 mousePosition, Vector2 interactPosition)
     {
         
+    }
+
+    private float aftershoot = 0;
+    public override void _Process(double delta)
+    {
+        if (aftershoot < 0) return;
+        aftershoot -= (float)delta;
     }
 }
